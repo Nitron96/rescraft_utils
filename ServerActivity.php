@@ -96,14 +96,12 @@ while(!feof($myfile)) {
         if (strpos($line, '[Server thread/INFO] [net.minecraft.network.NetHandlerPlayServer]')) {
             $loggedOut[] = $line;
             recordEvent($users, $line, "logout");
-            //echo $line."<br>";
 
 
         }
         if(strpos($line, '[net.minecraft.server.management.PlayerList]')) {
             $loggedIn[] = $line;
             recordEvent($users, $line, "login");
-            //echo $line."<br>";
         }
 }
 fclose($myfile);
